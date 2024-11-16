@@ -530,6 +530,7 @@ const actions = [
 const searchTags = [
     "Apartamentos à venda",
     "Cobertura à venda",
+
     "Apartamentos para alugar",
     "Sala comercial para alugar",
     "Ponto comercial à venda",

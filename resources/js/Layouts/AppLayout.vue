@@ -1,7 +1,7 @@
 <template>
     <div class="fixed w-full bg-slate-50 z-50">
         <nav
-            class="flex items-center justify-between px-6 lg:px-20 py-4 shadow-md shadow-blue-950/30"
+            class="flex items-center justify-between px-6 lg:px-16 py-4 shadow-md shadow-blue-950/30"
         >
             <!-- Mobile: Logo de um lado e Menu Hamburguer do outro -->
             <div class="flex items-center justify-between w-full md:hidden">
@@ -109,15 +109,15 @@
                             class="border-b-2 flex items-center gap-2 border-transparent hover:border-blue-900 pb-1"
                         >
                             <Car class="w-6 h-6 text-blue-900" />
-                            Veículos
+                            Comprar Veículo
                         </p>
                     </li>
                     <li class="cursor-pointer relative">
                         <p
-                            class="border-b-2 border-transparent flex items-center gap-2 hover:border-blue-900 pb-1"
+                            class="border-b-2 flex items-center gap-2 border-transparent hover:border-blue-900 pb-1"
                         >
-                            <Hotel class="w-6 h-6 text-blue-900" />
-                            Imóveis
+                            <Car class="w-6 h-6 text-blue-900" />
+                            Vender Veículo
                         </p>
                     </li>
                     <li class="cursor-pointer relative">
@@ -171,18 +171,19 @@
                         class="hover:border-b-2 flex items-center gap-2 border-transparent hover:border-blue-900"
                     >
                         <Car class="w-5 h-5 text-blue-900" />
-                        Veículos
+                        Comprar Veículo
                     </span>
                 </li>
+
                 <li
                     class="cursor-pointer transition-all duration-500 ease-in-out"
-                    :style="{ transitionDelay: '200ms' }"
+                    :style="{ transitionDelay: '100ms' }"
                 >
                     <span
                         class="hover:border-b-2 flex items-center gap-2 border-transparent hover:border-blue-900"
                     >
-                        <Hotel class="w-5 h-5 text-blue-900" />
-                        Imóveis
+                        <Car class="w-5 h-5 text-blue-900" />
+                        Vender Veículo
                     </span>
                 </li>
                 <li

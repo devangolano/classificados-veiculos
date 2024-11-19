@@ -1,24 +1,36 @@
-<script setup>
-import AppLayout from "@/Layouts/AppLayout.vue";
-import Welcome from "@/Components/Welcome.vue";
-import { Head } from "@inertiajs/vue3";
-</script>
-
 <template>
-    <Head title="Dashboard" />
-    <AppLayout title="Dashboard">
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Dashboard Principal
-            </h2>
-        </template>
-
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <Welcome />
+    <div class="flex h-screen bg-gray-100">
+        <SidebarDashboard @select-menu-item="changeContent" />
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <HeaderDashboard />
+            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
+                <div class="container mx-auto px-6 py-8">
+                    <component :is="currentComponent" />
                 </div>
-            </div>
+            </main>
         </div>
-    </AppLayout>
+    </div>
 </template>
+
+<script setup>
+import { ref, shallowRef } from "vue";
+import HeaderDashboard from "@/Components/HeaderDashboard.vue";
+import SidebarDashboard from "@/Components/SidebarDashboard.vue";
+import DashboardContent from "@/Components/DashboardContent.vue";
+import UserListContent from "@/Components/UserListContent.vue";
+
+const currentComponent = shallowRef(DashboardContent);
+
+const changeContent = (componentName) => {
+    switch (componentName) {
+        case "DashboardContent":
+            currentComponent.value = DashboardContent;
+            break;
+        case "UserListContent":
+            currentComponent.value = UserListContent;
+            break;
+        default:
+            currentComponent.value = DashboardContent;
+    }
+};
+</script>

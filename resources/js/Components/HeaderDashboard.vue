@@ -48,6 +48,7 @@
                             >
                             <a
                                 href="#"
+                                @click.prevent="logout"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                 role="menuitem"
                                 >Sair</a
@@ -62,11 +63,22 @@
 
 <script setup>
 import { ref } from "vue";
+import axios from "axios";
 import { Bell } from "lucide-vue-next";
 
 const isDropdownOpen = ref(false);
 
 const toggleDropdown = () => {
     isDropdownOpen.value = !isDropdownOpen.value;
+};
+
+const logout = async () => {
+    try {
+        await axios.post("/logout"); // Rota de logout no Laravel
+        window.location.href = "/";
+    } catch (error) {
+        console.error("Erro ao encerrar a sessão:", error);
+        alert("Falha ao encerrar a sessão. Tente novamente.");
+    }
 };
 </script>

@@ -63,7 +63,15 @@ const menuItems = ref([
         ],
     },
     {
-        name: "Usuarios",
+        name: "Veículo",
+        icon: Users,
+        submenu: [
+            { name: "Cadastrar Veículo", component: "UserStatsContent" },
+            { name: "Listar Veículo", component: "UserListContent" },
+        ],
+    },
+    {
+        name: "Usuário",
         icon: Users,
         submenu: [
             { name: "Cadastrar Usuários", component: "UserStatsContent" },
@@ -71,7 +79,7 @@ const menuItems = ref([
         ],
     },
     {
-        name: "Relatórios",
+        name: "Relatório",
         icon: BarChart2,
         submenu: [
             { name: "Listar Relatórios", component: "SalesReportContent" },

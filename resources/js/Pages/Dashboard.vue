@@ -1,4 +1,8 @@
-<template>
+<script setup lang="ts">
+import AppLayout from "@/Layouts/AppLayout.vue";
+</script>
+
+<!-- <template>
     <div class="flex h-screen bg-gray-100">
         <SidebarDashboard @select-menu-item="changeContent" />
         <div class="flex-1 flex flex-col overflow-hidden">
@@ -33,4 +37,7 @@ const changeContent = (componentName) => {
             currentComponent.value = DashboardContent;
     }
 };
-</script>
+</script> -->
+<template>
+    <AppLayout> </AppLayout>
+</template>
